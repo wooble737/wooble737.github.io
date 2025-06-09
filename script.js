@@ -6,15 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fade in content on load
   section.classList.add("fade-in");
 
-  // Animate header hover
-  const header = document.querySelector("header");
-  header.addEventListener("mouseenter", () => {
-    header.style.backgroundColor = "#555";
-  });
-  header.addEventListener("mouseleave", () => {
-    header.style.backgroundColor = "#333";
-  });
-
   // Highlight current nav link
   const navLinks = document.querySelectorAll("nav a");
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
@@ -40,12 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-// Show welcome alert only once on homepage
-if (currentPage === "index.html" && !sessionStorage.getItem("welcomeShown")) {
-  setTimeout(() => {
-    alert("Welcome to my personal website!");
-    sessionStorage.setItem("welcomeShown", "true");
-  }, 500);
-
+  // Show welcome alert only once on homepage
+  if (currentPage === "index.html" && !sessionStorage.getItem("welcomeShown")) {
+    setTimeout(() => {
+      alert("Welcome to my personal website!");
+      sessionStorage.setItem("welcomeShown", "true");
+    }, 500);
   }
 });
