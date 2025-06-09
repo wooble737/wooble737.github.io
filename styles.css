@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* === Animated gradient background === */
 body {
   background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
@@ -11,7 +9,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Animated gradient keyframes */
+/* Gradient animation */
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
@@ -24,7 +22,7 @@ body {
   }
 }
 
-/* === Universal color lock === */
+/* Lock text color and remove effects */
 body,
 header,
 nav,
@@ -34,7 +32,12 @@ footer {
   color: #ffffff !important;
 }
 
-/* === Layout === */
+* {
+  mix-blend-mode: normal !important;
+  filter: none !important;
+}
+
+/* Header */
 header {
   background: rgba(255, 255, 255, 0.15);
   padding: 1rem;
@@ -43,12 +46,14 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Main layout container */
 .main-layout {
   display: flex;
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px); /* header + footer offset */
+  align-items: stretch;
 }
 
-/* Sidebar */
+/* Sidebar navigation */
 nav {
   background-color: rgba(255, 255, 255, 0.15);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
@@ -58,11 +63,14 @@ nav {
   flex-direction: column;
   align-items: flex-start;
   backdrop-filter: blur(6px);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  margin: 1rem 0 1rem 1rem;
 }
 
-/* Nav links */
+/* Navigation links */
 nav a {
-  text-decoration: none;
+  text-decoration: none !important;
   margin-bottom: 1rem;
   font-weight: 500;
   color: #ffffff !important;
@@ -74,14 +82,13 @@ nav a:hover {
   color: #ffffff !important;
 }
 
-/* Current nav highlight */
 nav a.active,
 nav a[style*="underline"] {
   text-decoration: underline;
   font-weight: bold;
 }
 
-/* Content section */
+/* Main content section */
 section {
   flex: 1;
   padding: 2rem;
@@ -96,44 +103,4 @@ section {
   color: #ffffff !important;
 }
 
-/* Footer */
-footer {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* aligns content to right inside the footer */
-  gap: 0.4rem;
-  z-index: 1000;
-  color: #ffffff;
-  font-size: 0.9rem;
-  text-align: right;
-}
-
-/* Remove blue underline and make links white */
-footer a {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  transition: transform 0.2s ease;
-  white-space: nowrap;
-}
-/* Animation classes */
-.fade-in {
-  opacity: 1 !important;
-}
-
-.fade-out {
-  opacity: 0 !important;
-}
-
-/* Prevent blending or filter effects on text */
-* {
-  mix-blend-mode: normal !important;
-  filter: none !important;
-}
+/* A*
