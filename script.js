@@ -40,10 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Show welcome alert only on homepage
-  if (currentPage === "index.html") {
-    setTimeout(() => {
-      alert("Welcome to my personal website!");
-    }, 500);
+// Show welcome alert only once on homepage
+if (currentPage === "index.html" && !sessionStorage.getItem("welcomeShown")) {
+  setTimeout(() => {
+    alert("Welcome to my personal website!");
+    sessionStorage.setItem("welcomeShown", "true");
+  }, 500);
+
   }
 });
