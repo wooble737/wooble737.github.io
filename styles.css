@@ -66,11 +66,8 @@ nav {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   margin: 1rem 0 1rem 1rem;
-  
-  /* add bottom padding to clear fixed footer */
-  padding-bottom: 4rem; /* adjust as needed */
-
 }
+
 /* Navigation links */
 nav a {
   text-decoration: none !important;
