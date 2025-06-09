@@ -79,7 +79,32 @@ nav a:hover {
 section {
   flex: 1;
   padding: 2rem;
-  background-color: #f4f4f4;
+  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent */
+  color: #333;
+  border-radius: 12px;
+  margin: 1rem;
+  backdrop-filter: blur(4px);
+}
+/* Animated gradient background */
+body {
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: #333;
 }
 
+/* Keyframes for background animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+nav {
+  background-color: rgba(34, 34, 34, 0.9);
+}
