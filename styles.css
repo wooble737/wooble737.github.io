@@ -5,7 +5,7 @@ body {
   background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
-  color: #333;
+  color: #fff; /* switch to white text for better contrast */
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -26,32 +26,35 @@ body {
 
 /* Header styling */
 header {
-  background: #333;
+  background: rgba(255, 255, 255, 0.15); /* very transparent white */
   color: #fff;
   padding: 1rem;
   text-align: center;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Layout container with sidebar and main content */
 .main-layout {
   display: flex;
-  min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
+  min-height: calc(100vh - 160px);
 }
 
 /* Sidebar navigation */
 nav {
-  background-color: rgba(34, 34, 34, 0.9);
-  border-right: 2px solid rgba(255, 255, 255, 0.2); /* semi-transparent border */
+  background-color: rgba(255, 255, 255, 0.15); /* see-through */
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem 1rem;
   width: 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  backdrop-filter: blur(6px);
 }
 
 /* Navigation links */
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   margin-bottom: 1rem;
   font-weight: 500;
@@ -60,7 +63,7 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
-  color: #facc15; /* Accent color on hover */
+  color: #facc15; /* accent color */
 }
 
 /* Highlight current nav link */
@@ -74,26 +77,28 @@ nav a[style*="underline"] {
 section {
   flex: 1;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
-  color: #333;
-  border: 2px solid rgba(255, 255, 255, 0.3); /* semi-transparent border */
+  background-color: rgba(255, 255, 255, 0.15); /* see-through */
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   margin: 1rem;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* subtle glow */
-  opacity: 0; /* for fade-in effect, controlled by JS */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  opacity: 0; /* for fade-in effect */
   transition: opacity 1s ease-in-out;
 }
 
 /* Footer styling */
 footer {
-  background: #333;
+  background: rgba(255, 255, 255, 0.15); /* see-through */
   color: #fff;
   text-align: center;
   padding: 1rem;
   position: fixed;
   bottom: 0;
   width: 100%;
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Fade-in and fade-out classes for JS animation */
