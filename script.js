@@ -1,12 +1,12 @@
+// script.js
 
 document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector("section");
-  section.style.opacity = 0;
-  section.style.transition = "opacity 1s ease-in-out";
-  setTimeout(() => {
-    section.style.opacity = 1;
-  }, 100);
 
+  // Fade in content on load
+  section.classList.add("fade-in");
+
+  // Animate header hover
   const header = document.querySelector("header");
   header.addEventListener("mouseenter", () => {
     header.style.backgroundColor = "#555";
@@ -15,16 +15,33 @@ document.addEventListener("DOMContentLoaded", () => {
     header.style.backgroundColor = "#333";
   });
 
+  // Highlight current nav link
   const navLinks = document.querySelectorAll("nav a");
-  const currentPath = window.location.pathname.split("/").pop();
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
   navLinks.forEach(link => {
-    if (link.getAttribute("href") === currentPath) {
+    if (link.getAttribute("href") === currentPage) {
       link.style.textDecoration = "underline";
       link.style.fontWeight = "bold";
     }
   });
 
-  if (currentPath === "" || currentPath === "index.html") {
+  // Smooth page transition on nav click
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const destination = link.getAttribute("href");
+
+      section.classList.remove("fade-in");
+      section.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = destination;
+      }, 500); // Match CSS transition duration
+    });
+  });
+
+  // Show welcome alert only on homepage
+  if (currentPage === "index.html") {
     setTimeout(() => {
       alert("Welcome to my personal website!");
     }, 500);
