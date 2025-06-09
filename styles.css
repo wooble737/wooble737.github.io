@@ -1,99 +1,17 @@
+/* styles.css */
 
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	line-height: 1.6;
-	background-color: #f4f4f4;
-	color: #333;
-}
-
-header {
-	background: #333;
-	color: #fff;
-	padding: 1rem 2rem;
-	text-align: center;
-}
-
-nav a {
-	color: #fff;
-	margin: 0 1rem;
-	text-decoration: none;
-}
-
-	nav a:hover {
-		text-decoration: underline;
-	}
-
-section {
-	padding: 2rem;
-	opacity: 0;
-}
-
-footer {
-	background: #333;
-	color: #fff;
-	text-align: center;
-	padding: 1rem;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-}
-
-a {
-	color: #0066cc;
-}
-
-	a:hover {
-		color: #004999;
-	}
-
-/* Layout container */
-.main-layout {
-  display: flex;
-  min-height: calc(100vh - 160px); /* Adjust for header & footer */
-}
-
-/* Sidebar navigation */
-nav {
-  background: #222;
-  color: white;
-  padding: 2rem 1rem;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-bottom: 1rem;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Main content section */
-section {
-  flex: 1;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent */
-  color: #333;
-  border-radius: 12px;
-  margin: 1rem;
-  backdrop-filter: blur(4px);
-}
-/* Animated gradient background */
+/* === Animated gradient background === */
 body {
   background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Keyframes for background animation */
+/* Background animation keyframes */
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
@@ -105,6 +23,84 @@ body {
     background-position: 0% 50%;
   }
 }
+
+/* Header styling */
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Layout container with sidebar and main content */
+.main-layout {
+  display: flex;
+  min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
+}
+
+/* Sidebar navigation */
 nav {
   background-color: rgba(34, 34, 34, 0.9);
+  border-right: 2px solid rgba(255, 255, 255, 0.2); /* semi-transparent border */
+  padding: 2rem 1rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Navigation links */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #facc15; /* Accent color on hover */
+}
+
+/* Highlight current nav link */
+nav a.active,
+nav a[style*="underline"] {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Main content section */
+section {
+  flex: 1;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+  color: #333;
+  border: 2px solid rgba(255, 255, 255, 0.3); /* semi-transparent border */
+  border-radius: 12px;
+  margin: 1rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* subtle glow */
+  opacity: 0; /* for fade-in effect, controlled by JS */
+  transition: opacity 1s ease-in-out;
+}
+
+/* Footer styling */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Fade-in and fade-out classes for JS animation */
+.fade-in {
+  opacity: 1 !important;
+}
+
+.fade-out {
+  opacity: 0 !important;
 }
