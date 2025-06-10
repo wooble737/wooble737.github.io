@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorite Music</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      display: inline-flex;
+    }
+
+    .rating > span {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #888;
+      transition: color 0.2s;
+    }
+
+    .rating > span:hover,
+    .rating > span.hovered,
+    .rating > span.active {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Favorite Music</h1>
+  </header>
+
+  <div class="main-layout">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="music.html" class="active">Music Ratings</a>
+    </nav>
+
+    <section class="fade-in">
+      <h2>Rate My Favorite Tracks</h2>
+      <ul id="music-list">
+        <li data-song="digital-love">
+          <strong>Daft Punk – Digital Love</strong>
+          <div class="rating" data-id="digital-love">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </li>
+        <li data-song="something-comforting">
+          <strong>Porter Robinson – Something Comforting</strong>
+          <div class="rating" data-id="something-comforting">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </li>
+        <li data-song="everything-right">
+          <strong>Radiohead – Everything In Its Right Place</strong>
+          <div class="rating" data-id="everything-right">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </li>
+        <!-- Add more songs as needed -->
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <a href="https://youtube.com" target="_blank" title="YouTube">📺 YouTube</a>
+    <a href="https://twitter.com" target="_blank" title="Twitter">🐦 Twitter</a>
+    <a href="https://discord.com" target="_blank" title="Discord">💬 Discord</a>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.rating').forEach(rating => {
+      const id = rating.dataset.id;
+      const stars = Array.from(rating.children);
+
+      const saved = localStorage.getItem(`rating-${id}`);
+      if (saved) {
+        for (let i = 0; i < +saved; i++) stars[i].classList.add('active');
+      }
+
+      stars.forEach((star, i) => {
+        star.addEventListener('mouseover', () => {
+          stars.forEach((s, idx) => {
+            s.classList.toggle('hovered', idx <= i);
+          });
+        });
+
+        star.addEventListener('mouseout', () => {
+          stars.forEach(s => s.classList.remove('hovered'));
+        });
+
+        star.addEventListener('click', () => {
+          stars.forEach(s => s.classList.remove('active'));
+          for (let j = 0; j <= i; j++) stars[j].classList.add('active');
+          localStorage.setItem(`rating-${id}`, i + 1);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
