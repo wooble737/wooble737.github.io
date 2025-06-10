@@ -144,3 +144,33 @@ footer a:hover {
   transform: scale(1.1);
   text-decoration: underline;
 }
+/* Default animated background stays */
+
+body.dark {
+  background: #000 !important;
+  background-image: none !important;
+  color: #e0e0e0;
+}
+
+/* Make sure nav and containers stay visible */
+body.dark nav,
+body.dark section,
+body.dark header {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark nav a {
+  color: #ccc;
+}
+
+body.dark footer {
+  background: transparent;
+  color: #aaa;
+}
+
+/* Optional: Darker hover for links */
+body.dark nav a:hover,
+body.dark footer a:hover {
+  color: white;
+}
