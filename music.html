@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+  if (localStorage.getItem('dark-theme') === 'true') {
+    document.documentElement.classList.add('dark');
+  }
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Favorite Music</title>
@@ -10,7 +15,7 @@
 <body>
   <header>
     <h1>Favorite Music</h1>
-   <button id="theme-toggle" aria-label="Toggle dark theme">Dark Theme (no animated bg)</button>
+   <button id="theme-toggle" aria-label="Toggle dark theme">Dark Theme (no animation)</button>
   </header>
 
   <div class="main-layout">
