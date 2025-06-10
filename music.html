@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  if (localStorage.getItem('dark-theme') === 'true') {
-    document.documentElement.classList.add('dark');
-  }
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Favorite Music</title>
-
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Shared stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>Favorite Music</h1>
-    <button id="theme-toggle" aria-label="Toggle dark theme">Dark Theme (no animation)</button>
+    <button id="theme-toggle" aria-label="Toggle dark theme">🌓</button>
   </header>
 
   <div class="main-layout">
@@ -34,22 +24,21 @@
     <section class="fade-in">
       <h2>My Favorite Tracks</h2>
       <ul class="music-list">
-        <li><strong>Daft Punk – Digital Love</strong></li>
-        <li><strong>Porter Robinson – Something Comforting</strong> </li>
-        <li><strong>Radiohead – Everything In Its Right Place</strong> </li>
-        <li><strong>ODESZA – A Moment Apart</strong></li>
-        <li><strong>Tame Impala – Let It Happen</strong></li>
-        <li><strong>Hans Zimmer – Time</strong> </li>
+        <li><strong>Daft Punk – Digital Love</strong> — 10/10</li>
+        <li><strong>Porter Robinson – Something Comforting</strong> — 9/10</li>
+        <li><strong>Radiohead – Everything In Its Right Place</strong> — 10/10</li>
+        <li><strong>ODESZA – A Moment Apart</strong> — 9/10</li>
+        <li><strong>Tame Impala – Let It Happen</strong> — 10/10</li>
+        <li><strong>Hans Zimmer – Time</strong> — 9/10</li>
       </ul>
     </section>
   </div>
 
   <footer>
-    <a href="https://x.com/cooldudehandle" target="_blank" title="Twitter">Twitter</a>
-    <a href="contact.html" target="_blank" title="Discord">Discord</a>
+    <a href="https://x.com/cooldudehandle target="_blank">Twitter</a>
+    <a href="https://discord.com" target="_blank">Discord</a>
   </footer>
 
-  <!-- Your other scripts (e.g., for background, animation) -->
   <script src="scripts.js"></script>
 </body>
 </html>
