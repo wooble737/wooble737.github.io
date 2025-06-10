@@ -39,3 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('theme-toggle');
+  const isDark = localStorage.getItem('dark-theme') === 'true';
+
+  if (isDark) {
+    document.body.classList.add('dark');
+  }
+
+  toggle?.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const enabled = document.body.classList.contains('dark');
+    localStorage.setItem('dark-theme', enabled);
+  });
+});
