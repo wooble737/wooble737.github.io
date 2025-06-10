@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  if (localStorage.getItem('dark-theme') === 'true') {
-    document.documentElement.classList.add('dark');
-  }
-</script>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stuff this guy does</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>Projects</h1>
-    <button id="theme-toggle" aria-label="Toggle dark theme">Dark Theme (no animation)</button>
-
+    <button id="theme-toggle" aria-label="Toggle dark theme">🌓</button>
   </header>
-    <div class="main-layout">
+
+  <div class="main-layout">
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
       <a href="contact.html">Contact</a>
       <a href="music.html">My Music top 10</a>
     </nav>
 
-  <section>
-    <h2></h2>
-    <ul>
-      <li><strong>Project One:</strong> </li>
-      <li><strong>Project Two:</strong> </li>
-      <li><strong>Project Three:</strong> </li>
-    </ul>
-  </section>
+    <section class="fade-in">
+      <h2>My Projects</h2>
+      <p>Here are some of the things I've been working on lately:</p>
+      <ul>
+        <li><strong>Portfolio Site</strong> — This very site you're browsing now.</li>
+        <li><strong>MIXViS</strong> — A complex audio visualizer program made with C++, JUCE framework and OpenGL</li>
+        <li><strong>PAS</strong> — A mod for Geometry Dash made using the Geode framework</li>
+      </ul>
+    </section>
+  </div>
 
-<footer>
-    <a href="https://x.com/cooldudehandle" target="_blank" title="Twitter">Twitter</a>
-    <a href="contact.html" target="_blank" title="Discord">Discord</a>
-</footer>
+  <footer>
+    <a href="https://x.com/cooldudehandle" target="_blank">Twitter</a>
+    <a href="contact.html" target="_blank">Discord</a>
+  </footer>
 
-  <script src="script.js"></script>
-
+  <script src="scripts.js"></script>
 </body>
 </html>
