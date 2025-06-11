@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-  if (localStorage.getItem('dark-theme') === 'true') {
-    document.documentElement.classList.add('dark');
-  }
-</script>
+  <script>
+    if (localStorage.getItem('dark-theme') === 'true') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Favorite Music</title>
@@ -14,8 +14,8 @@
 </head>
 <body>
   <header>
-    <h1>My top 10 choices</h1>
-   <button id="theme-toggle" aria-label="Toggle dark theme">Dark Theme (no animation)</button>
+    <h1>MY MUSIC TOP 5</h1>
+    <button id="theme-toggle" aria-label="Toggle dark theme">Dark Theme (no animation)</button>
   </header>
 
   <div class="main-layout">
@@ -29,23 +29,36 @@
     <section class="fade-in">
       <h2>My Favorite Tracks</h2>
       <ul class="music-list">
-        <ol><strong>Rebirth the end Part I - Sasanqua & Rebirth the end Part II - Starcluster</strong> </ol>
-        <ol><strong>underscores - Uncanny Long arms (with Jane Remover)</strong></ol>
-        <ol><strong>xi – Ascension to Heaven</strong> </ol>
-        <ol><strong>Camellia – Exit this Earth's Atomosphere</strong> </ol>
-        <ol><strong>Frums – XNOR XNOR XNOR</strong> </ol>
-        <ol><strong>Kendrick Lamar – Sing About Me, I'm Dying of Thirst </strong></ol>
+        <li>
+          <strong>underscores - Uncanny Long arms (with Jane Remover)</strong>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </li>
+        <li>
+          <strong>xi – Ascension to Heaven</strong>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </li>
+        <li>
+          <strong>Camellia – Exit this Earth's Atmosphere</strong>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </li>
+        <li>
+          <strong>Frums – XNOR XNOR XNOR</strong>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </li>
+        <li>
+          <strong>Kendrick Lamar – Sing About Me, I'm Dying of Thirst</strong>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </li>
       </ul>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/episode/2H5LG0eXQzc8pLU1kZlnEA?si=0491340b15234a93"width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </section>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3j38fb5Pna0iFQhtUGuT8c?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </section>
-    
   </div>
 
   <footer>
-    <a href="https://x.com/cooldudehandle" target="_blank">Twitter</a>
-    <a href="https://discord.com" target="_blank">Discord</a>
+    <div class="footer-content">
+      <span>Socials:</span>
+      <a href="https://x.com/cooldudehandle" target="_blank">Twitter</a>
+      <a href="https://discord.com" target="_blank">Discord</a>
+    </div>
   </footer>
 
   <script src="scripts.js"></script>
