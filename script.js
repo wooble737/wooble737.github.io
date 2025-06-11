@@ -1,10 +1,26 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector("section");
+  const toggle = document.getElementById("theme-toggle");
+
+  // Apply dark theme if previously enabled
+  if (localStorage.getItem("dark-theme") === "true") {
+    document.documentElement.classList.add("dark");
+    document.body.classList.add("dark");
+  }
+
+  // Toggle dark theme on button click
+  toggle?.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    document.body.classList.toggle("dark");
+
+    const isDark = document.documentElement.classList.contains("dark");
+    localStorage.setItem("dark-theme", isDark);
+  });
 
   // Fade in content on load
-  section.classList.add("fade-in");
+  if (section) {
+    section.classList.add("fade-in");
+  }
 
   // Highlight current nav link
   const navLinks = document.querySelectorAll("nav a");
@@ -16,40 +32,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Smooth page transition on nav click
+  // Smooth page transitions
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const destination = link.getAttribute("href");
 
-      section.classList.remove("fade-in");
-      section.classList.add("fade-out");
+      if (section) {
+        section.classList.remove("fade-in");
+        section.classList.add("fade-out");
+      }
 
       setTimeout(() => {
         window.location.href = destination;
-      }, 500); // Match CSS transition duration
+      }, 500);
     });
   });
 
-  // Show welcome alert only once on homepage
+  // Optional: Welcome alert only once on homepage
   if (currentPage === "index.html" && !sessionStorage.getItem("welcomeShown")) {
     setTimeout(() => {
       alert("Welcome to my personal website!");
       sessionStorage.setItem("welcomeShown", "true");
     }, 500);
   }
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('theme-toggle');
-  const isDark = localStorage.getItem('dark-theme') === 'true';
-
-  if (isDark) {
-    document.body.classList.add('dark');
-  }
-
-  toggle?.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    const enabled = document.body.classList.contains('dark');
-    localStorage.setItem('dark-theme', enabled);
-  });
 });
