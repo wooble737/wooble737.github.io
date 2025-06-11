@@ -154,7 +154,7 @@ body.dark footer {
 
 .track-description {
   font-size: 0.75rem;
-  color: var(--text-color, #ccc);
+  color: var(--text-color, #fff);
   opacity: 0.85;
   margin-top: 0.5rem;
   font-style: italic;
