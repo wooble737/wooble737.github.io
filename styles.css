@@ -151,3 +151,11 @@ body.dark nav a.active {
 body.dark footer {
   color: #aaa;
 }
+
+.track-description {
+  font-size: 0.75rem;
+  color: var(--text-color, #ccc);
+  opacity: 0.85;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
